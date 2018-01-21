@@ -57,9 +57,9 @@ public class AIPlayer implements Player {
                 move = i;
             }
             alpha = Math.max(v, alpha);
-//            if (beta < alpha) {
-//                break;
-//            }
+            if (beta < alpha) {
+                break;
+            }
         }
         return move;
     }
@@ -79,9 +79,9 @@ public class AIPlayer implements Player {
             }
             v = Math.max(v, getMinVal(node.children[i], depth - 1, alpha, beta));
             alpha = Math.max(v, alpha);
-//            if (beta < alpha) {
-//                break;
-//            }
+            if (beta < alpha) {
+                break;
+            }
         }
 
         return v;
@@ -102,9 +102,9 @@ public class AIPlayer implements Player {
             }
             v = Math.min(v, getMaxVal(node.children[i], depth - 1, alpha, beta));
             beta = Math.min(v, beta);
-//            if (beta < alpha) {
-//                break;
-//            }
+            if (beta < alpha) {
+                break;
+            }
         }
 
         return v;
